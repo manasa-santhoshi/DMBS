@@ -1,0 +1,1 @@
+COPY LINEITEM FROM '/Users/manasamaddi/Desktop/DBMS/DATA_TABLES/lineitem.csv' DELIMITER '|' CSV;

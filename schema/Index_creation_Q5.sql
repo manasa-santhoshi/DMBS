@@ -1,0 +1,3 @@
+-- Create indexes
+
+CREATE INDEX idx_REGION_NAME ON REGION(R_NAME);

@@ -1,0 +1,43 @@
+--Top supplier qurey (Q15)
+
+-- STEP 1: CREATE A VIEW THAT CALCULATES TOTAL REVENUE PER SUPPLIER IN THE GIVEN QUARTER
+
+CREATE OR REPLACE VIEW REVENUE_Q15 AS
+SELECT
+    L_SUPPKEY AS SUPPLIER_NO,
+    SUM(L_EXTENDEDPRICE * (1 - L_DISCOUNT)) AS TOTAL_REVENUE
+FROM
+    LINEITEM
+WHERE
+    L_SHIPDATE >= DATE '1996-01-01'
+    AND L_SHIPDATE < DATE '1996-01-01' + INTERVAL '3 MONTHS'
+GROUP BY
+    L_SUPPKEY;
+
+-- STEP 2: SELECT SUPPLIER DETAILS FOR THE SUPPLIER(S) WITH THE MAXIMUM REVENUE IN THAT QUARTER
+SELECT
+    s.s_suppkey,
+    s.s_name,
+    s.s_address,
+    s.s_phone,
+    r.total_revenue
+FROM
+    supplier s
+JOIN
+    revenue_q15 r ON s.s_suppkey = r.supplier_no
+WHERE
+    r.total_revenue = (
+        SELECT MAX(total_revenue) FROM revenue_q15
+    )
+ORDER BY
+    s.s_suppkey;
+
+-- STEP 3: DROP THE VIEW SINCE IT IS NO LONGER NEEDED
+
+DROP VIEW REVENUE_Q15;
+
+
+
+
+
+
