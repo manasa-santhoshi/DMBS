@@ -1,0 +1,2 @@
+"distinct_n_nationkey","min_n_nationkey","max_n_nationkey","distinct_n_regionkey","min_n_regionkey","max_n_regionkey","distinct_n_name","distinct_n_comment"
+"25",0,24,"5",0,4,"25","25"
