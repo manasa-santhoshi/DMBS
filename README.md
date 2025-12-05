@@ -29,12 +29,13 @@ We worked with **Scale Factor 10 (SF=10)**, which produces roughly **15 GB of da
 
 ---
 
-## Repository Structure  
+## Repository Structure
 
 DMBS/
-├── data/ # Placeholder for .csv or .tbl files
-├── schema/ # SQL scripts for table creation
-├── queries/ # Original and optimized queries
-├── scripts/ # Data conversion and loading scripts
+├── data/          # Placeholder for .csv or .tbl files
+├── schema/        # SQL scripts for table creation
+├── queries/       # Original and optimized query files
+├── scripts/       # Data conversion and loading scripts
 └── docs/
-└── Big Data Project_Manasa Maddi & Safa Yassin.pdf # Full project report
+    └── Big Data Project_Manasa Maddi & Safa Yassin.pdf  # Full project report
+
